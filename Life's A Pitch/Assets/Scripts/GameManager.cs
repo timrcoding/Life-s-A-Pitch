@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private GameObject Teleprinter;
 
     public float globalSpeed;
+    public List<string> categories;
 
     //ARTICLE NEWS MATCHING
     public GameObject articleHeld;

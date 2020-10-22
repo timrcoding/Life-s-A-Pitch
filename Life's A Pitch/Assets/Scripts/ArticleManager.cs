@@ -29,6 +29,10 @@ public class ArticleManager : MonoBehaviour
     public List<TextAsset> articleCategories;
     public Color[] articleColors;
 
+    //PENDING ARTICLES;
+    public GameObject[] pendingNodes;
+    public List<int> pending;
+
     void Start()
     {
         instance = this;
@@ -73,4 +77,11 @@ public class ArticleManager : MonoBehaviour
         nodeUsed[i] = false;
     }
 
+    public void setQueue()
+    {
+        for(int i = 0; i < pending.Count; i++)
+        {
+            //pendingNodes[i].GetComponent<QueueNode>().text.text = 
+        }
+    }
 }
