@@ -59,4 +59,10 @@ public class ArticleBehaviour : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    public void fadeOut()
+    {
+        GetComponent<Animator>().SetTrigger("Fade");
+    }
 }
+

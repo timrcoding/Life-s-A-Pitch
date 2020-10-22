@@ -35,10 +35,8 @@ public class GameManager : MonoBehaviour
             int newsId = newsHoveredOver.GetComponent<NewsfeedBehaviour>().newsCategory;
             if (articleId == newsId)
             {
-                Debug.Log("MATCH");
-                
-                Destroy(articleHeld);
                 newsHoveredOver.GetComponent<NewsfeedBehaviour>().fadeOut();
+                articleHeld.GetComponent<ArticleBehaviour>().fadeOut();
             }
             else
             { 
