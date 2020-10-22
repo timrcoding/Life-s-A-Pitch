@@ -1,0 +1,12 @@
+@Guardian
+@Times
+@FinancialTimes
+@Mirror
+@NME
+@Weasel Monthly
+@CatholicHerald
+@Express
+@Slate
+@Vox
+@Vice
+@Conspiracist monthly

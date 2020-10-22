@@ -7,36 +7,67 @@ using TMPro;
 public class NewsfeedBehaviour : MonoBehaviour
 {
     [SerializeField]
-    private Vector2 newTarget;
-    [SerializeField]
-    private float speed;
+    private int targetVector;
+
     public TextMeshProUGUI newsText;
+    [SerializeField]
+    private Image Background;
+
+    public int newsCategory { get; private set; }
 
     void Start()
     {
-        newTarget = transform.position;
-        StartCoroutine(moveFeed());
-        StartCoroutine(destroyObject());
-        //AudioManager.instance.playClip("Teleprinter");
-        
+        setNews();
     }
     private void Update()
     {
-        float step = speed * Time.deltaTime;
-        transform.position = Vector2.MoveTowards(transform.position, newTarget, step);
+        transform.position = Vector3.Lerp(transform.position, NewsManager.instance.newsNodes[targetVector].transform.position, 0.1f);
+        if(targetVector == NewsManager.instance.newsNodes.Length - 1)
+        {
+            destroyNews();
+        }
     }
 
-    IEnumerator moveFeed()
+    public void setNewsCategory()
     {
-        Debug.Log("MOVING");
-        newTarget = new Vector2(transform.position.x, transform.position.y + 1f);
-        yield return new WaitForSeconds(GameManager.instance.newsSpawnSpeed);
-        StartCoroutine(moveFeed());
+            GameManager.instance.newsHoveredOver = gameObject;
+            Debug.Log("NEWS: " + newsCategory);
     }
 
-    IEnumerator destroyObject()
+    public void incrementTarget()
     {
-        yield return new WaitForSeconds(30);
+        targetVector++;
+    }
+
+    void setNews()
+    {
+        newsCategory = Random.Range(0, NewsManager.instance.newsCategories.Count);
+        List<string> possibleText = new List<string>(NewsManager.instance.newsCategories[newsCategory].text.Split('\n'));
+        string publication = NewsManager.instance.publications[Random.Range(0, NewsManager.instance.publications.Count)];
+        string body = possibleText[Random.Range(0, possibleText.Count)].ToString();
+        newsText.text = publication + '\n' + body;
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        setNewsCategory();
+        Debug.Log("COLL");
+        Background.color = Color.green;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Background.color = Color.white;
+    }
+
+    public void destroyNews()
+    {
         Destroy(gameObject);
+    }
+
+    public void fadeOut()
+    {
+        GetComponent<Animator>().SetTrigger("Fade");
     }
 }

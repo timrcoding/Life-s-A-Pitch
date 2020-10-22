@@ -9,24 +9,49 @@ public class GameManager : MonoBehaviour
     //NEWS
     [SerializeField]
     private GameObject Teleprinter;
-    [SerializeField]
-    public float newsSpawnSpeed;
+
+    public float globalSpeed;
+
+    //ARTICLE NEWS MATCHING
+    public GameObject articleHeld;
+    public GameObject newsHoveredOver;
+    //THIS MEANS THAT AN ARTICLE IS BEING HELD AND THUS A MATCH CAN BE MADE;
+    public bool matcheable;
 
     void Start()
     {
         instance = this;
-        StartCoroutine(createNews());
+
     }
 
-    IEnumerator createNews()
-    {
-        yield return new WaitForSeconds(newsSpawnSpeed);
-        GameObject NewsPrinter = GameObject.FindGameObjectWithTag("NewsPrinter");
-        GameObject news = Instantiate(Teleprinter, NewsPrinter.transform.position, Teleprinter.transform.rotation);
-        news.transform.SetParent(NewsPrinter.transform, false);
-        //news.GetComponent<NewsfeedBehaviour>().newsText.text = generateGenericFeed();
+    
 
-        StartCoroutine(createNews());
+    public IEnumerator checkForMatch()
+    {
+        yield return new WaitForEndOfFrame();
+        if (matcheable) 
+        {
+            int articleId = articleHeld.GetComponent<ArticleBehaviour>().articleCategory;
+            int newsId = newsHoveredOver.GetComponent<NewsfeedBehaviour>().newsCategory;
+            if (articleId == newsId)
+            {
+                Debug.Log("MATCH");
+                
+                Destroy(articleHeld);
+                newsHoveredOver.GetComponent<NewsfeedBehaviour>().fadeOut();
+            }
+            else
+            { 
+                Destroy(articleHeld);
+            }
+            resetNode();
+         }
+    }
+
+    void resetNode()
+    {
+        int num = articleHeld.GetComponent<ArticleBehaviour>().articleNodeRef;
+        ArticleManager.instance.resetNode(num);
     }
 
 }
