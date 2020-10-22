@@ -12,12 +12,14 @@ public class NewsfeedBehaviour : MonoBehaviour
     public TextMeshProUGUI newsText;
     [SerializeField]
     private Image Background;
-
+    [SerializeField]
+    private Color origColor;
     public int newsCategory { get; private set; }
 
     void Start()
     {
         setNews();
+        GetComponent<Image>().color = origColor;
     }
     private void Update()
     {
@@ -58,7 +60,7 @@ public class NewsfeedBehaviour : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Background.color = Color.white;
+        Background.color = origColor;
     }
 
     public void destroyNews()

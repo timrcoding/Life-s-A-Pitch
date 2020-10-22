@@ -44,7 +44,7 @@ public class ArticleManager : MonoBehaviour
 
     IEnumerator createArticle()
     {
-        yield return new WaitForSeconds(articleSpawnSpeed);
+        
         if(articleNodes.All(x => x)){
             int num = checkFreeArticleNode();
             Vector3 nodePos = articleNodes[num].transform.position;
@@ -54,6 +54,7 @@ public class ArticleManager : MonoBehaviour
             Article.GetComponent<ArticleBehaviour>().articleNodeRef = num;
             removeFromQueue();
         }
+        yield return new WaitForSeconds(articleSpawnSpeed);
         StartCoroutine(createArticle());
         
     }
@@ -84,7 +85,7 @@ public class ArticleManager : MonoBehaviour
         foreach(GameObject g in pendingNodes)
         {
             g.GetComponent<QueueNode>().text.text = "";
-            GetComponent<Image>().color = Color.clear;
+            g.GetComponent<Image>().color = Color.clear;
         }
 
         for(int i = 0; i < pending.Count; i++)

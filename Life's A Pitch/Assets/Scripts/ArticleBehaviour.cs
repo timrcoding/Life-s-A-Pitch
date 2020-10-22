@@ -56,7 +56,6 @@ public class ArticleBehaviour : MonoBehaviour
             num = Random.Range(0, ArticleManager.instance.articleCategories.Count);
         }
         articleCategory = num;
-        Debug.Log("NUM" + num);
         Background.color = ArticleManager.instance.articleColors[articleCategory];
         List<string> possibleText = new List<string>(ArticleManager.instance.articleCategories[articleCategory].text.Split('\n'));
         string names = ArticleManager.instance.names[Random.Range(0, ArticleManager.instance.names.Count)];

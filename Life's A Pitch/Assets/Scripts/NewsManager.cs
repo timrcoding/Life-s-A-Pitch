@@ -14,6 +14,8 @@ public class NewsManager : MonoBehaviour
     //NODES
     public GameObject[] newsNodes;
     //CATEGORIES OF NEWS
+    [SerializeField]
+    private int newsSpawnSpeed;
     public List<TextAsset> newsCategories;
     public TextAsset publicationsText;
     public List<string> publications;
@@ -27,12 +29,12 @@ public class NewsManager : MonoBehaviour
     }
 
     IEnumerator createNews()
-    {
-        yield return new WaitForSeconds(3);
+    {        
         GameObject newsObj = Instantiate(news, newsNodes[0].transform.position, Quaternion.identity);
         newsObj.transform.SetParent(newsParent.transform, false);
         newsObj.transform.position = newsNodes[0].transform.position;
         incrementNewsTarget();
+        yield return new WaitForSeconds(3);
         StartCoroutine(createNews());
     }
 

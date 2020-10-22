@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,9 +20,15 @@ public class GameManager : MonoBehaviour
     //THIS MEANS THAT AN ARTICLE IS BEING HELD AND THUS A MATCH CAN BE MADE;
     public bool matcheable;
 
+    [SerializeField]
+    private int score;
+    [SerializeField]
+    private TextMeshProUGUI scoreText;
+
     void Start()
     {
         instance = this;
+        setScore();
 
     }
 
@@ -37,12 +44,15 @@ public class GameManager : MonoBehaviour
             if (articleId == newsId)
             {
                 newsHoveredOver.GetComponent<NewsfeedBehaviour>().fadeOut();
-                articleHeld.GetComponent<ArticleBehaviour>().fadeOut();
+                
+                score++;
+                setScore();
             }
             else
             { 
-                Destroy(articleHeld);
+               // Destroy(articleHeld);
             }
+            articleHeld.GetComponent<ArticleBehaviour>().fadeOut();
             resetNode();
          }
     }
@@ -51,6 +61,11 @@ public class GameManager : MonoBehaviour
     {
         int num = articleHeld.GetComponent<ArticleBehaviour>().articleNodeRef;
         ArticleManager.instance.resetNode(num);
+    }
+
+    public void setScore()
+    {
+        scoreText.text = "Score" + '\n' + score.ToString();
     }
 
 }
