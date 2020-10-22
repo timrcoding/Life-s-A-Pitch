@@ -1732,10 +1732,10 @@ MonoBehaviour:
   Teleprinter: {fileID: 894510766}
   globalSpeed: 2
   categories:
-  - Art
+  - Arts
   - Gossip
   - Politics
-  - Princess Diana
+  - Princess Di
   - Sport
   articleHeld: {fileID: 0}
   newsHoveredOver: {fileID: 0}
@@ -1886,25 +1886,35 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3979065865030403304, guid: 1fc3d696548aa8d4582681094ca4557e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
+        type: 3}
+      propertyPath: m_text
+      value: Sport
       objectReference: {fileID: 0}
     - target: {fileID: 8656721126507845333, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
@@ -2777,25 +2787,35 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3979065865030403304, guid: 1fc3d696548aa8d4582681094ca4557e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
+        type: 3}
+      propertyPath: m_text
+      value: Politics
       objectReference: {fileID: 0}
     - target: {fileID: 8656721126507845333, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
@@ -3169,25 +3189,35 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3979065865030403304, guid: 1fc3d696548aa8d4582681094ca4557e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
+        type: 3}
+      propertyPath: m_text
+      value: Gossip
       objectReference: {fileID: 0}
     - target: {fileID: 8656721126507845333, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
@@ -5750,25 +5780,75 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3979065865030403304, guid: 1fc3d696548aa8d4582681094ca4557e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306016055113684077, guid: 1fc3d696548aa8d4582681094ca4557e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306016055113684077, guid: 1fc3d696548aa8d4582681094ca4557e,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306016055113684077, guid: 1fc3d696548aa8d4582681094ca4557e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306016055113684077, guid: 1fc3d696548aa8d4582681094ca4557e,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 0
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
+        type: 3}
+      propertyPath: m_text
+      value: Princess Diana
+      objectReference: {fileID: 0}
+    - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 23.75
       objectReference: {fileID: 0}
     - target: {fileID: 8656721126507845333, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
@@ -6550,6 +6630,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
+        type: 3}
+      propertyPath: m_text
+      value: Art
+      objectReference: {fileID: 0}
+    - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8656721126507845333, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}

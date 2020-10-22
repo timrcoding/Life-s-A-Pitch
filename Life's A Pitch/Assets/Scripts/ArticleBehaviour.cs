@@ -46,8 +46,17 @@ public class ArticleBehaviour : MonoBehaviour
 
     void setText()
     {
-        
-        articleCategory = Random.Range(0, ArticleManager.instance.articleCategories.Count);
+        int num = 0;
+        if (ArticleManager.instance.pending.Count != 0)
+        {
+            num = ArticleManager.instance.pending[0];
+        }
+        else
+        {
+            num = Random.Range(0, ArticleManager.instance.articleCategories.Count);
+        }
+        articleCategory = num;
+        Debug.Log("NUM" + num);
         Background.color = ArticleManager.instance.articleColors[articleCategory];
         List<string> possibleText = new List<string>(ArticleManager.instance.articleCategories[articleCategory].text.Split('\n'));
         string names = ArticleManager.instance.names[Random.Range(0, ArticleManager.instance.names.Count)];

@@ -19,5 +19,6 @@ public class QueueButton : MonoBehaviour
     public void setToQueue(int i)
     {
         ArticleManager.instance.pending.Add(i);
+        ArticleManager.instance.setQueue();
     }
 }

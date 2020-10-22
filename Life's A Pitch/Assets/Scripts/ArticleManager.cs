@@ -39,6 +39,7 @@ public class ArticleManager : MonoBehaviour
         nodeUsed = new bool[articleNodes.Count];
         names = new List<string>(NamesText.text.Split('\n'));
         StartCoroutine(createArticle());
+        setQueue();
     }
 
     IEnumerator createArticle()
@@ -50,7 +51,8 @@ public class ArticleManager : MonoBehaviour
             GameObject Article = Instantiate(article, article.transform.position, Quaternion.identity);
             Article.transform.SetParent(articleParent.transform,false);
             Article.transform.position = nodePos;
-            Article.GetComponent<ArticleBehaviour>().articleNodeRef = num; 
+            Article.GetComponent<ArticleBehaviour>().articleNodeRef = num;
+            removeFromQueue();
         }
         StartCoroutine(createArticle());
         
@@ -79,9 +81,26 @@ public class ArticleManager : MonoBehaviour
 
     public void setQueue()
     {
+        foreach(GameObject g in pendingNodes)
+        {
+            g.GetComponent<QueueNode>().text.text = "";
+            GetComponent<Image>().color = Color.clear;
+        }
+
         for(int i = 0; i < pending.Count; i++)
         {
-            //pendingNodes[i].GetComponent<QueueNode>().text.text = 
+            QueueNode qn = pendingNodes[i].GetComponent<QueueNode>();
+            qn.text.text = GameManager.instance.categories[pending[i]];
+            qn.GetComponent<Image>().color = articleColors[pending[i]];
+        }
+    }
+
+    public void removeFromQueue()
+    {
+        if (pending.Count != 0)
+        {
+            pending.RemoveAt(0);
+            setQueue();
         }
     }
 }
