@@ -20,5 +20,6 @@ public class QueueButton : MonoBehaviour
     {
         ArticleManager.instance.pending.Add(i);
         ArticleManager.instance.setQueue();
+        AudioManager.instance.playClip("Queue2",1);
     }
 }

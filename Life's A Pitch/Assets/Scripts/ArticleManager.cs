@@ -83,7 +83,7 @@ public class ArticleManager : MonoBehaviour
             }
             else
             {
-                Article.GetComponent<ArticleBehaviour>().articleCategory = Random.Range(0, articleCategories.Count-1);
+                Article.GetComponent<ArticleBehaviour>().articleCategory = Random.Range(0, articleCategories.Count);
             }
             
             removeFromQueue();

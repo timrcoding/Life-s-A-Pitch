@@ -10,12 +10,15 @@ public class UpgradeManager : MonoBehaviour
     public static UpgradeManager instance;
     public bool canUpgrade = true;
     public GameObject button;
+    public int upgradeCount;
+    public GameObject[] typeWriters;
     
 
     void Start()
     {
         instance = this;
         setUpgradeText();
+        setTypeWriters();
     }
 
     public void setUpgradeText()
@@ -44,6 +47,24 @@ public class UpgradeManager : MonoBehaviour
             }
             canUpgrade = false;
             button.GetComponent<Button>().interactable = false;
+            upgradeCount++;
+            setTypeWriters();
+            AudioManager.instance.playClip("Type", 1);
+        }
+    }
+
+    public void setTypeWriters()
+    {
+        for(int i = 0; i < typeWriters.Length; i++)
+        {
+            if(i < upgradeCount)
+            {
+                typeWriters[i].SetActive(true);
+            }
+            else
+            {
+                typeWriters[i].SetActive(false);
+            }
         }
     }
 }
