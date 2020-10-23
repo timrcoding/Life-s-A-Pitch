@@ -21,7 +21,7 @@ public class ArticleManager : MonoBehaviour
 
     //VARIABLES
     [SerializeField]
-    private float articleSpawnSpeed;
+    public float articleSpawnSpeed;
 
     //ARTICLE MATERIALS
     public TextAsset descriptionsText;

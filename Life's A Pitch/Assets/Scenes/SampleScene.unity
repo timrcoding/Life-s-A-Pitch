@@ -2121,7 +2121,6 @@ MonoBehaviour:
   articleHeld: {fileID: 0}
   newsHoveredOver: {fileID: 0}
   matcheable: 0
-  score: 0
   scoreText: {fileID: 785104717}
   background: {fileID: 953618323}
   feedback: {fileID: 7385261641604485995, guid: e7bfccacc477b9b4d856aa1774a90ba7,
@@ -2339,7 +2338,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &600822992
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2402,7 +2401,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 600822994}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1830169274}
+        m_MethodName: createIntern
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &600822994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2421,8 +2431,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: c5308bc70d7237b4a8252277ef51523d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6224,7 +6234,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Upgrade
+  m_text: "Hire\n Intern"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1765504271b1fda4d86514fb9c8f0185, type: 2}
   m_sharedMaterial: {fileID: 8572393460171455571, guid: 1765504271b1fda4d86514fb9c8f0185,
@@ -6294,12 +6304,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1714811477}
-    characterCount: 7
+    characterCount: 12
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 2
+    wordCount: 2
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -7031,6 +7041,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b4d2831031ea1438191f4236bd513c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canUpgrade: 0
+  button: {fileID: 600822991}
 --- !u!1 &1901217801
 GameObject:
   m_ObjectHideFlags: 0

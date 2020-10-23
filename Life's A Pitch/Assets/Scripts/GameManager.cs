@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     public bool matcheable;
 
     [SerializeField]
-    private int score;
+    public int score { get; private set; }
     [SerializeField]
     private TextMeshProUGUI scoreText;
 
@@ -85,6 +85,7 @@ public class GameManager : MonoBehaviour
     public void setScore()
     {
         scoreText.text = "Published: " + '\n' + score.ToString();
+        UpgradeManager.instance.setUpgradeText();
     }
 
     void setBackground()
