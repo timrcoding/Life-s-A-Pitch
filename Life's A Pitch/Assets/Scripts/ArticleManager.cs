@@ -29,9 +29,21 @@ public class ArticleManager : MonoBehaviour
     public List<TextAsset> articleCategories;
     public Color[] articleColors;
 
+    
+
     //PENDING ARTICLES;
     public GameObject[] pendingNodes;
     public List<int> pending;
+
+    //TIMER
+    public float timer;
+    [SerializeField]
+    private bool startTimer;
+    [SerializeField]
+    Image timerBar;
+    [SerializeField]
+    Image timerBarBackground;
+
 
     void Start()
     {
@@ -42,9 +54,22 @@ public class ArticleManager : MonoBehaviour
         setQueue();
     }
 
+    private void Update()
+    {
+        if (startTimer)
+        {
+            timer += Time.deltaTime;
+        }
+
+   
+        
+    }
+
+
     IEnumerator createArticle()
     {
-        
+        startTimer = false;
+        timer = 0;
         if(articleNodes.All(x => x)){
             int num = checkFreeArticleNode();
             Vector3 nodePos = articleNodes[num].transform.position;
@@ -54,6 +79,7 @@ public class ArticleManager : MonoBehaviour
             Article.GetComponent<ArticleBehaviour>().articleNodeRef = num;
             removeFromQueue();
         }
+        StartCoroutine(setBar());
         yield return new WaitForSeconds(articleSpawnSpeed);
         StartCoroutine(createArticle());
         
@@ -103,5 +129,25 @@ public class ArticleManager : MonoBehaviour
             pending.RemoveAt(0);
             setQueue();
         }
+    }
+
+    IEnumerator setBar()
+    {
+        
+        timerBar.rectTransform.sizeDelta = new Vector2(0, 20);
+        timerBarBackground.rectTransform.sizeDelta = new Vector2((articleSpawnSpeed-1) * 100 + 20,30);
+        for (int i = 0; i < articleSpawnSpeed; i++)
+        {
+            timerBar.rectTransform.sizeDelta = new Vector2(i* 100, 20);
+            yield return new WaitForSeconds(1);
+        }
+        AudioManager.instance.playClip("Finished",1);
+
+        
+    }
+
+    float map(float s, float a1, float a2, float b1, float b2)
+    {
+        return b1 + (s - a1) * (b2 - b1) / (a2 - a1);
     }
 }

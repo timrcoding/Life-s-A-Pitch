@@ -1,12 +1,13 @@
+@IGN
+@Kotaku
+@Polygon
+@Gamespot
+@Eurogamer
+@RPS
+@BuriedTreasures
+@AMAP
 @Guardian
-@Times
-@FinancialTimes
-@Mirror
 @NME
-@Weasel Monthly
-@CatholicHerald
-@Express
-@Slate
-@Vox
+@ShitIndieGames
 @Vice
-@Conspiracist monthly
+@WeaselMonthly

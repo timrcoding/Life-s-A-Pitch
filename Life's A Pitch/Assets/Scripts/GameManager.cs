@@ -30,6 +30,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Image background;
 
+    [SerializeField]
+    private GameObject feedback;
+
+
+
     void Start()
     {
         instance = this;
@@ -40,6 +45,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         setBackground();
+        
     }
 
 
@@ -57,10 +63,13 @@ public class GameManager : MonoBehaviour
                 
                 score++;
                 setScore();
+                AudioManager.instance.playClip("Success_02", 1);
+                createFeedback("Excellent!");
             }
             else
-            { 
-               // Destroy(articleHeld);
+            {
+                AudioManager.instance.playClip("Failure", 1);
+                createFeedback("No Good!");
             }
             articleHeld.GetComponent<ArticleBehaviour>().fadeOut();
             resetNode();
@@ -75,17 +84,26 @@ public class GameManager : MonoBehaviour
 
     public void setScore()
     {
-        scoreText.text = "Score" + '\n' + score.ToString();
+        scoreText.text = "Published: " + '\n' + score.ToString();
     }
 
     void setBackground()
     {
-        background.color = Color.HSVToRGB(colorCounter, 0.05f, 1);
+        background.color = Color.HSVToRGB(colorCounter, 0.1f, 1);
         colorCounter += Time.deltaTime * Time.deltaTime;
         if (colorCounter >= 1)
         {
             colorCounter = 0;
         }
+    }
+
+    void createFeedback(string s)
+    {
+        GameObject fdck = Instantiate(feedback, Input.mousePosition, Quaternion.identity);
+        GameObject parent = GameObject.FindGameObjectWithTag("Feedback");
+        fdck.transform.SetParent(parent.transform);
+        fdck.transform.position = new Vector2(parent.transform.position.x, Input.mousePosition.y);
+        fdck.GetComponent<FeedbackBehaviour>().text.text = s;
     }
 
 }

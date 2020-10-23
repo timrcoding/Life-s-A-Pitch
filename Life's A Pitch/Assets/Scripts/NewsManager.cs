@@ -34,6 +34,7 @@ public class NewsManager : MonoBehaviour
         newsObj.transform.SetParent(newsParent.transform, false);
         newsObj.transform.position = newsNodes[0].transform.position;
         incrementNewsTarget();
+        //AudioManager.instance.playClip("Notification",.5f);
         yield return new WaitForSeconds(3);
         StartCoroutine(createNews());
     }
