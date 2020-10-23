@@ -3471,7 +3471,7 @@ PrefabInstance:
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 9
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
@@ -3491,7 +3491,7 @@ PrefabInstance:
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_text
-      value: Narrative
+      value: Racing
       objectReference: {fileID: 0}
     - target: {fileID: 8656721126507845333, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}

@@ -46,20 +46,11 @@ public class ArticleBehaviour : MonoBehaviour
 
     void setText()
     {
-        int num = 0;
-        if (ArticleManager.instance.pending.Count != 0)
-        {
-            num = ArticleManager.instance.pending[0];
-        }
-        else
-        {
-            num = Random.Range(0, ArticleManager.instance.articleCategories.Count);
-        }
-        articleCategory = num;
+        Debug.Log("Article Cat:" + articleCategory);
         Background.color = ArticleManager.instance.articleColors[articleCategory];
         List<string> possibleText = new List<string>(ArticleManager.instance.articleCategories[articleCategory].text.Split('\n'));
-        string description = ArticleManager.instance.descriptions[Random.Range(0, ArticleManager.instance.descriptions.Count)];
-        string gameName = possibleText[Random.Range(0, possibleText.Count)].ToString();
+        string description = ArticleManager.instance.descriptions[Random.Range(0, ArticleManager.instance.descriptions.Count-1)];
+        string gameName = possibleText[Random.Range(0, possibleText.Count-1)].ToString();
         string combined  = gameName + '\n' + description;
         articleText.text = combined;
     }

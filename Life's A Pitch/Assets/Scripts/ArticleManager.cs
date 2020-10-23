@@ -77,7 +77,17 @@ public class ArticleManager : MonoBehaviour
             Article.transform.SetParent(articleParent.transform,false);
             Article.transform.position = nodePos;
             Article.GetComponent<ArticleBehaviour>().articleNodeRef = num;
+            if (pending.Count != 0)
+            {
+                Article.GetComponent<ArticleBehaviour>().articleCategory = pending[0];
+            }
+            else
+            {
+                Article.GetComponent<ArticleBehaviour>().articleCategory = Random.Range(0, articleCategories.Count-1);
+            }
+            
             removeFromQueue();
+            setQueue();
         }
         StartCoroutine(setBar());
         yield return new WaitForSeconds(articleSpawnSpeed);
@@ -126,8 +136,9 @@ public class ArticleManager : MonoBehaviour
     {
         if (pending.Count != 0)
         {
-            pending.RemoveAt(0);
             setQueue();
+            pending.RemoveAt(0);
+            
         }
     }
 
