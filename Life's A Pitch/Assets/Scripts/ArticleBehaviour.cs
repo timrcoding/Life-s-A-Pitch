@@ -58,9 +58,10 @@ public class ArticleBehaviour : MonoBehaviour
         articleCategory = num;
         Background.color = ArticleManager.instance.articleColors[articleCategory];
         List<string> possibleText = new List<string>(ArticleManager.instance.articleCategories[articleCategory].text.Split('\n'));
-        string names = ArticleManager.instance.names[Random.Range(0, ArticleManager.instance.names.Count)];
-        string body = possibleText[Random.Range(0, possibleText.Count)].ToString();
-        articleText.text = names + '\n' + body;
+        string description = ArticleManager.instance.descriptions[Random.Range(0, ArticleManager.instance.descriptions.Count)];
+        string gameName = possibleText[Random.Range(0, possibleText.Count)].ToString();
+        string combined  = gameName + '\n' + description;
+        articleText.text = combined;
     }
 
     public void destroyArticle()

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -25,6 +26,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI scoreText;
 
+    private float colorCounter;
+    [SerializeField]
+    private Image background;
+
     void Start()
     {
         instance = this;
@@ -32,7 +37,12 @@ public class GameManager : MonoBehaviour
 
     }
 
-    
+    private void Update()
+    {
+        setBackground();
+    }
+
+
 
     public IEnumerator checkForMatch()
     {
@@ -66,6 +76,16 @@ public class GameManager : MonoBehaviour
     public void setScore()
     {
         scoreText.text = "Score" + '\n' + score.ToString();
+    }
+
+    void setBackground()
+    {
+        background.color = Color.HSVToRGB(colorCounter, 0.05f, 1);
+        colorCounter += Time.deltaTime * Time.deltaTime;
+        if (colorCounter >= 1)
+        {
+            colorCounter = 0;
+        }
     }
 
 }

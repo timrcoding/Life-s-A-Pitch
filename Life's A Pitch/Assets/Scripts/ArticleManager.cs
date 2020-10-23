@@ -24,8 +24,8 @@ public class ArticleManager : MonoBehaviour
     private float articleSpawnSpeed;
 
     //ARTICLE MATERIALS
-    public TextAsset NamesText;
-    public List<string> names;
+    public TextAsset descriptionsText;
+    public List<string> descriptions;
     public List<TextAsset> articleCategories;
     public Color[] articleColors;
 
@@ -37,7 +37,7 @@ public class ArticleManager : MonoBehaviour
     {
         instance = this;
         nodeUsed = new bool[articleNodes.Count];
-        names = new List<string>(NamesText.text.Split('\n'));
+        descriptions = new List<string>(descriptionsText.text.Split('\n'));
         StartCoroutine(createArticle());
         setQueue();
     }

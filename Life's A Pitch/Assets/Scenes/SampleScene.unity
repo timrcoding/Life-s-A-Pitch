@@ -1867,14 +1867,14 @@ MonoBehaviour:
   nodeUsed: 
   articleParent: {fileID: 1901217801}
   articleSpawnSpeed: 6
-  NamesText: {fileID: 4900000, guid: 45b995db30df864409a0afebbdc6180b, type: 3}
-  names: []
+  descriptionsText: {fileID: 4900000, guid: fab5eff4dbb749e4ba8c9ae0f06019cd, type: 3}
+  descriptions: []
   articleCategories:
-  - {fileID: 4900000, guid: a7cfcd5dfcc25aa40afd007b91ce0d24, type: 3}
   - {fileID: 4900000, guid: 50b1fef029ea4e64a8d272e7a1d772e6, type: 3}
   - {fileID: 4900000, guid: 47c2b52a8f8c03548a59316387600205, type: 3}
+  - {fileID: 4900000, guid: ad51ae86f3e24db4999f8a36c26756d6, type: 3}
   - {fileID: 4900000, guid: 69c8cea2a5bef4448a176c3c2bc2c21c, type: 3}
-  - {fileID: 4900000, guid: 1b7d55c596f37724e9a9864b13b69d14, type: 3}
+  - {fileID: 4900000, guid: a7cfcd5dfcc25aa40afd007b91ce0d24, type: 3}
   articleColors:
   - {r: 0.9811321, g: 0.7358491, b: 0.7358491, a: 1}
   - {r: 0.7372549, g: 0.98039216, b: 0.9213578, a: 1}
@@ -1924,11 +1924,11 @@ MonoBehaviour:
   Teleprinter: {fileID: 894510766}
   globalSpeed: 2
   categories:
-  - Arts
-  - Gossip
-  - Politics
-  - Princess Di
-  - Sport
+  - Shooters
+  - Horror
+  - Racing
+  - Puzzles
+  - Retro
   articleHeld: {fileID: 0}
   newsHoveredOver: {fileID: 0}
   matcheable: 0
@@ -1962,11 +1962,11 @@ MonoBehaviour:
   - {fileID: 1043241928}
   newsSpawnSpeed: 3
   newsCategories:
-  - {fileID: 4900000, guid: c306e3811116bf84c8d65b4c20c2b1ec, type: 3}
-  - {fileID: 4900000, guid: ad51ae86f3e24db4999f8a36c26756d6, type: 3}
-  - {fileID: 4900000, guid: 2a85a255d0dbe34419fcd79abbca1dab, type: 3}
-  - {fileID: 4900000, guid: 394a74e443e26b447924d597099330e4, type: 3}
   - {fileID: 4900000, guid: b96897dfa510ce74ab81ad4745a467a9, type: 3}
+  - {fileID: 4900000, guid: 2a85a255d0dbe34419fcd79abbca1dab, type: 3}
+  - {fileID: 4900000, guid: 1b7d55c596f37724e9a9864b13b69d14, type: 3}
+  - {fileID: 4900000, guid: 394a74e443e26b447924d597099330e4, type: 3}
+  - {fileID: 4900000, guid: c306e3811116bf84c8d65b4c20c2b1ec, type: 3}
   publicationsText: {fileID: 4900000, guid: ea633e89eef8adb4ca1b36faad1ca374, type: 3}
   publications: []
 --- !u!1001 &546701545
@@ -2109,7 +2109,12 @@ PrefabInstance:
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_text
-      value: Sport
+      value: Retro
+      objectReference: {fileID: 0}
+    - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 23.5
       objectReference: {fileID: 0}
     - target: {fileID: 8656721126507845333, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
@@ -2816,7 +2821,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 572, y: -339}
+  m_AnchoredPosition: {x: 589, y: -338}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &785104717
@@ -3146,7 +3151,7 @@ PrefabInstance:
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
@@ -3166,7 +3171,7 @@ PrefabInstance:
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_text
-      value: Politics
+      value: Narrative
       objectReference: {fileID: 0}
     - target: {fileID: 8656721126507845333, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
@@ -3568,7 +3573,7 @@ PrefabInstance:
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_text
-      value: Gossip
+      value: HOrror
       objectReference: {fileID: 0}
     - target: {fileID: 8656721126507845333, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
@@ -6160,12 +6165,12 @@ PrefabInstance:
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 11
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
@@ -6180,7 +6185,7 @@ PrefabInstance:
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_text
-      value: Princess Di
+      value: Puzzles
       objectReference: {fileID: 0}
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
@@ -6200,7 +6205,7 @@ PrefabInstance:
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_fontSize
-      value: 26.6
+      value: 23.5
       objectReference: {fileID: 0}
     - target: {fileID: 8656721126507845333, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
@@ -6987,12 +6992,12 @@ PrefabInstance:
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_text
-      value: Art
+      value: Shooters
       objectReference: {fileID: 0}
     - target: {fileID: 6517005036811468754, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 3
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8656721126507845333, guid: 1fc3d696548aa8d4582681094ca4557e,
         type: 3}

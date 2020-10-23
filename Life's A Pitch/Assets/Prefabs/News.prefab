@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.91171235, g: 0.9811321, b: 0.9695725, a: 1}
+  m_Color: {r: 0.740566, g: 0.901342, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -421,7 +421,7 @@ MonoBehaviour:
   targetVector: 0
   newsText: {fileID: 3599793190844322132}
   Background: {fileID: 2480792661670683987}
-  origColor: {r: 0.8160377, g: 1, b: 0.98590595, a: 1}
+  origColor: {r: 0.7411765, g: 0.9019608, b: 1, a: 1}
 --- !u!225 &2539483974134094081
 CanvasGroup:
   m_ObjectHideFlags: 0

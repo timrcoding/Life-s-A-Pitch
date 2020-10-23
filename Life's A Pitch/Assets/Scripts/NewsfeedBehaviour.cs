@@ -19,14 +19,14 @@ public class NewsfeedBehaviour : MonoBehaviour
     void Start()
     {
         setNews();
-        GetComponent<Image>().color = origColor;
+        Background.color = origColor;
     }
     private void Update()
     {
         transform.position = Vector3.Lerp(transform.position, NewsManager.instance.newsNodes[targetVector].transform.position, 0.1f);
-        if(targetVector == NewsManager.instance.newsNodes.Length - 1)
+        if(targetVector == NewsManager.instance.newsNodes.Length - 3)
         {
-            destroyNews();
+            fadeOut();
         }
     }
 
